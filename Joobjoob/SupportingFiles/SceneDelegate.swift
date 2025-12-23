@@ -9,14 +9,24 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    private(set) static var shared: SceneDelegate?
+    
     var window: UIWindow?
-
-
+    var windowScene: UIWindowScene?
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        if let windowScene = scene as? UIWindowScene {
+            let window = UIWindow(windowScene: windowScene)
+            let storyboard = UIStoryboard.init(name: "Splash", bundle: nil)
+            let vc = storyboard.instantiateInitialViewController()
+            window.rootViewController = vc
+            self.window = window
+            window.makeKeyAndVisible()
+        }
+        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        self.windowScene = windowScene
+        Self.shared = self
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -46,7 +56,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+    
+    func changeWindowRootVC(_ vc: UIViewController) {
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
+    }
 
+    func showSplash() {
+        DispatchQueue.main.async {
+            let storyboard = UIStoryboard.init(name: "Splash", bundle: nil)
+            if let vc = storyboard.instantiateInitialViewController() {
+                self.changeWindowRootVC(vc)
+            }
+        }
+    }
 
 }
 
