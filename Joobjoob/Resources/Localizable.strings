@@ -5,3 +5,12 @@
 //  Created by zehye on 12/23/25.
 //
 
+// 기본
+"JOOBJOOB" = "줍줍";
+
+// 로그인 및 회원가입
+"LOGIN_SNS" = "SNS 계정으로 간편 로그인하기";
+"LOGIN_KAKAO" = "카카오 로그인";
+"LOGIN_NAVER" = "네이버 로그인";
+"LOGIN_APPLE" = "애플 로그인";
+"LOGIN_GOOGLE" = "구글 로그인";
