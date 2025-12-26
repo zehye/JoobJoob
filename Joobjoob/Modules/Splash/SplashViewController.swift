@@ -12,12 +12,12 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
-//            self?.showLoginVC()
-//        }
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            self?.showLoginVC()
+        }
+    }
     
     func showLoginVC() {
         guard let window = SceneDelegate.shared?.window else { return }

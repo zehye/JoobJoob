@@ -56,20 +56,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-    
-    func changeWindowRootVC(_ vc: UIViewController) {
-        self.window?.rootViewController = vc
-        self.window?.makeKeyAndVisible()
-    }
-
-    func showSplash() {
-        DispatchQueue.main.async {
-            let storyboard = UIStoryboard.init(name: "Splash", bundle: nil)
-            if let vc = storyboard.instantiateInitialViewController() {
-                self.changeWindowRootVC(vc)
-            }
-        }
-    }
 
 }
 
