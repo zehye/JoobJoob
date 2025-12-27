@@ -24,7 +24,10 @@ extension ColorTheme {
     enum Foreground {
         case clear
         case white
-        
+        case black
+        case kakalYellow
+        case naverGreen
+        case grey
     }
 }
 
@@ -34,6 +37,10 @@ extension ColorTheme.LightTheme {
         switch type {
         case .clear: return UIColor.clear
         case .white: return UIColor(hexString: "#FFFFFF")
+        case .black: return UIColor(hexString: "000000")
+        case .kakalYellow: return UIColor(hexString: "FEE500")
+        case .naverGreen: return UIColor(hex: "03A94D")
+        case .grey: return UIColor(hexString: "6C7278")
         }
     }
 }
