@@ -17,7 +17,7 @@
 *_REMOTE_*.txt
 
 # Key 파일 
-Config/Private.xcconfig
+**/Private.xcconfig
 
 ### Kotlin ###
 # Compiled class file
