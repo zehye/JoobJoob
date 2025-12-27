@@ -21,6 +21,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var appleLoginView: LoginView!
     @IBOutlet weak var googleLoginView: LoginView!
     
+    var snsManager: SNSManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +43,13 @@ class LoginViewController: UIViewController {
         self.loginDescLbl.font = UIFont.spoqaHanSansNeo(type: .medium, size: CGFloat(12))
         self.loginDescLbl.textColor = ColorTheme(background: .grey)
         self.loginDescLbl.text = "LOGIN_SNS".localized
+        
+        self.kakaoLoginView.containerBtn.addTarget(self, action: #selector(self.kakaoBtnClicked), for: .touchUpInside)
+    }
+    
+    @objc func kakaoBtnClicked() {
+        self.snsManager = SNSManager.instance(delegate: self)
+        self.snsManager?.kakao()
     }
 }
 
@@ -59,3 +68,37 @@ extension LoginViewController: LoginViewDelegate {
     }
 }
 
+extension LoginViewController: SNSManagerDelegate {
+    var snsManagerViewController: UIViewController {
+        return self
+    }
+    
+    func snsManager(_ type: SNSManager.SNSType, error: Error?) {
+        // sns 로그인 실패
+        if type == .kakao {
+            //            self.kakaoButton.hideIndicator()
+        } else if type == .naver {
+            //            self.naverButton.hideIndicator()
+        } else if type == .apple {
+            
+        } else if type == .google {
+            
+        }
+    }
+    
+    func snsManager(_ type: SNSManager.SNSType, login: SNSManager.SNSUser) {
+        // sns 로그인 완료
+        if type == .kakao {
+            //            self.kakaoButton.hideIndicator()
+        } else if type == .naver {
+            //            self.naverButton.hideIndicator()
+        } else if type == .apple {
+            
+        } else if type == .google {
+            
+        }
+        guard let token = login.token else { return }
+        
+        
+    }
+}
