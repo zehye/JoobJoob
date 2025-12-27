@@ -2,8 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kakao57c264559928a126517a1aaee6d0f112</string>
+			</array>
+		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>kakaokompassauth</string>
+		<string>kakaolink</string>
+		<string>kakaoplus</string>
+		<string>kakaotalk</string>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SpoqaHanSansNeo-Bold.ttf</string>
@@ -12,14 +28,6 @@
 		<string>SpoqaHanSansNeo-Regular.ttf</string>
 		<string>SpoqaHanSansNeo-Thin.ttf</string>
 	</array>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>파일 업로드를 위한 앨범 접근 권한을 요청드립니다.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>이미지 저장을 위한 앨범 전근 권한을 요청드립니다.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>파일 업로드를 위한 카메라 접근 권한을 요청드립니다.</string>
-	<key>CFBundleIdentifier</key>
-	<string></string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

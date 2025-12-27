@@ -1,0 +1,11 @@
+//
+//  Public.xcconfig
+//  Joobjoob
+//
+//  Created by zehye on 12/27/25.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+#include "Private.xcconfig"

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C991BDE12EFFB08F0009E32C /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = C991BDE02EFFB08F0009E32C /* KakaoSDK */; };
+		C991BDE32EFFB08F0009E32C /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C991BDE22EFFB08F0009E32C /* KakaoSDKAuth */; };
+		C991BDE52EFFB08F0009E32C /* KakaoSDKCert in Frameworks */ = {isa = PBXBuildFile; productRef = C991BDE42EFFB08F0009E32C /* KakaoSDKCert */; };
+		C991BDE72EFFB08F0009E32C /* KakaoSDKCertCore in Frameworks */ = {isa = PBXBuildFile; productRef = C991BDE62EFFB08F0009E32C /* KakaoSDKCertCore */; };
+		C991BDE92EFFB08F0009E32C /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = C991BDE82EFFB08F0009E32C /* KakaoSDKCommon */; };
+		C991BDEB2EFFB1400009E32C /* KakaoSDKFriendResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C991BDEA2EFFB1400009E32C /* KakaoSDKFriendResources.bundle */; };
 		C9ACF0452EF277F900C8BBE2 /* FirebaseAI in Frameworks */ = {isa = PBXBuildFile; productRef = C9ACF0442EF277F900C8BBE2 /* FirebaseAI */; };
 		C9ACF0472EF277F900C8BBE2 /* FirebaseAILogic in Frameworks */ = {isa = PBXBuildFile; productRef = C9ACF0462EF277F900C8BBE2 /* FirebaseAILogic */; };
 		C9ACF0492EF277F900C8BBE2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C9ACF0482EF277F900C8BBE2 /* FirebaseAnalytics */; };
@@ -16,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C991BDEA2EFFB1400009E32C /* KakaoSDKFriendResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KakaoSDKFriendResources.bundle; sourceTree = "<group>"; };
 		C9ACEFA32EF2506F00C8BBE2 /* Joobjoob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Joobjoob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -45,12 +52,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C991BDE52EFFB08F0009E32C /* KakaoSDKCert in Frameworks */,
+				C991BDE92EFFB08F0009E32C /* KakaoSDKCommon in Frameworks */,
 				C9ACF0472EF277F900C8BBE2 /* FirebaseAILogic in Frameworks */,
+				C991BDE72EFFB08F0009E32C /* KakaoSDKCertCore in Frameworks */,
 				C9ACF04D2EF277F900C8BBE2 /* FirebaseAnalyticsIdentitySupport in Frameworks */,
 				C9ACF0452EF277F900C8BBE2 /* FirebaseAI in Frameworks */,
 				C9ACF0492EF277F900C8BBE2 /* FirebaseAnalytics in Frameworks */,
 				C9ACF04B2EF277F900C8BBE2 /* FirebaseAnalyticsCore in Frameworks */,
 				C9ACF0812EF27A0D00C8BBE2 /* FirebaseFirestore in Frameworks */,
+				C991BDE12EFFB08F0009E32C /* KakaoSDK in Frameworks */,
+				C991BDE32EFFB08F0009E32C /* KakaoSDKAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +72,7 @@
 		C9ACEF9A2EF2506F00C8BBE2 = {
 			isa = PBXGroup;
 			children = (
+				C991BDEA2EFFB1400009E32C /* KakaoSDKFriendResources.bundle */,
 				C9ACEFA52EF2506F00C8BBE2 /* Joobjoob */,
 				C9ACF07F2EF27A0D00C8BBE2 /* Frameworks */,
 				C9ACEFA42EF2506F00C8BBE2 /* Products */,
@@ -107,6 +120,11 @@
 				C9ACF04A2EF277F900C8BBE2 /* FirebaseAnalyticsCore */,
 				C9ACF04C2EF277F900C8BBE2 /* FirebaseAnalyticsIdentitySupport */,
 				C9ACF0802EF27A0D00C8BBE2 /* FirebaseFirestore */,
+				C991BDE02EFFB08F0009E32C /* KakaoSDK */,
+				C991BDE22EFFB08F0009E32C /* KakaoSDKAuth */,
+				C991BDE42EFFB08F0009E32C /* KakaoSDKCert */,
+				C991BDE62EFFB08F0009E32C /* KakaoSDKCertCore */,
+				C991BDE82EFFB08F0009E32C /* KakaoSDKCommon */,
 			);
 			productName = Joobjoob;
 			productReference = C9ACEFA32EF2506F00C8BBE2 /* Joobjoob.app */;
@@ -138,6 +156,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				C9ACF0122EF2766600C8BBE2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C991BDDF2EFFB08F0009E32C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C9ACEFA42EF2506F00C8BBE2 /* Products */;
@@ -154,6 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C991BDEB2EFFB1400009E32C /* KakaoSDKFriendResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +192,8 @@
 /* Begin XCBuildConfiguration section */
 		C9ACEFB72EF2507100C8BBE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = C9ACEFA52EF2506F00C8BBE2 /* Joobjoob */;
+			baseConfigurationReferenceRelativePath = Config/Public.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -180,11 +202,15 @@
 				DEVELOPMENT_TEAM = 83WLB5XAL4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Joobjoob/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "파일 업로드를 위한 카메라 접근 권한을 요청드립니다.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "이미지 저장을 위한 앨범 전근 권한을 요청드립니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "파일 업로드를 위한 앨범 접근 권한을 요청드립니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -204,6 +230,8 @@
 		};
 		C9ACEFB82EF2507100C8BBE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = C9ACEFA52EF2506F00C8BBE2 /* Joobjoob */;
+			baseConfigurationReferenceRelativePath = Config/Public.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -212,11 +240,15 @@
 				DEVELOPMENT_TEAM = 83WLB5XAL4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Joobjoob/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "파일 업로드를 위한 카메라 접근 권한을 요청드립니다.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "이미지 저장을 위한 앨범 전근 권한을 요청드립니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "파일 업로드를 위한 앨범 접근 권한을 요청드립니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -236,6 +268,8 @@
 		};
 		C9ACEFB92EF2507100C8BBE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = C9ACEFA52EF2506F00C8BBE2 /* Joobjoob */;
+			baseConfigurationReferenceRelativePath = Config/Public.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -299,6 +333,8 @@
 		};
 		C9ACEFBA2EF2507100C8BBE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = C9ACEFA52EF2506F00C8BBE2 /* Joobjoob */;
+			baseConfigurationReferenceRelativePath = Config/Public.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -377,6 +413,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C991BDDF2EFFB08F0009E32C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		C9ACF0122EF2766600C8BBE2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -388,6 +432,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C991BDE02EFFB08F0009E32C /* KakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C991BDDF2EFFB08F0009E32C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDK;
+		};
+		C991BDE22EFFB08F0009E32C /* KakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C991BDDF2EFFB08F0009E32C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		C991BDE42EFFB08F0009E32C /* KakaoSDKCert */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C991BDDF2EFFB08F0009E32C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCert;
+		};
+		C991BDE62EFFB08F0009E32C /* KakaoSDKCertCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C991BDDF2EFFB08F0009E32C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCertCore;
+		};
+		C991BDE82EFFB08F0009E32C /* KakaoSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C991BDDF2EFFB08F0009E32C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCommon;
+		};
 		C9ACF0442EF277F900C8BBE2 /* FirebaseAI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9ACF0122EF2766600C8BBE2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
