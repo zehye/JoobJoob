@@ -7,15 +7,15 @@
 
 import UIKit
 
-enum LoginType {
-    case kakao
-    case naver
-    case apple
-    case google
-}
+//enum LoginType {
+//    case kakao
+//    case naver
+//    case apple
+//    case google
+//}
 
 protocol LoginViewDelegate: AnyObject {
-    func loginViewDidTap(_ view: LoginView, type: LoginType)
+    func loginViewDidTap(_ view: LoginView, type: Platform)
 }
 
 class LoginView: UIView {
@@ -27,7 +27,10 @@ class LoginView: UIView {
     @IBOutlet weak var loginTitleLbl: UILabel!
     
     weak var delegate: LoginViewDelegate?
-    private var loginType: LoginType?
+//    private var loginType: LoginType?
+    
+//    var platforms: [Platform] = Platform.allCases
+    var platformstype: Platform?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,8 +55,8 @@ class LoginView: UIView {
         addSubview(view)
     }
     
-    func configure(type: LoginType) {
-        self.loginType = type
+    func configure(type: Platform) {
+        self.platformstype = type
         
         containerView.layer.cornerRadius = 4
         containerBtn.setTitle("", for: .normal)
@@ -89,7 +92,7 @@ class LoginView: UIView {
     }
     
     @IBAction func tapLogin(_ sender: UIButton) {
-        guard let type = loginType else { return }
+        guard let type = platformstype else { return }
         delegate?.loginViewDidTap(self, type: type)
     }
 }

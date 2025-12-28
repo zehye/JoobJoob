@@ -13,6 +13,8 @@ import FirebaseFirestore
 import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
+// naver
+import NidThirdPartyLogin
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,11 +22,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        guard let kakaoAppKey = Bundle.main.object(forInfoDictionaryKey: "KAKAO_APP_KEY") as? String else {
-            fatalError("KAKAO_APP_KEY not found in Info.plist")
-        }
+
+//        
+//        // naver
+//        NidOAuth.shared.setLoginBehavior(.appPreferredWithInAppBrowserFallback)
+//        
+//        guard let naverCID = Bundle.main.object(forInfoDictionaryKey: "NAVER_CLIENT_ID") as? String else {
+//            fatalError("NAVER_CLIENT_ID not found in Info.plist")
+//        }
+//        guard let naverCsecretID = Bundle.main.object(forInfoDictionaryKey: "NAVER_CLIENT_SECRET") as? String else {
+//            fatalError("NAVER_CLIENT_SECRET not found in Info.plist")
+//        }
+//        guard let naverCBackURL = Bundle.main.object(forInfoDictionaryKey: "NAVER_CALLBACK_URL_SCHEME") as? String else {
+//            fatalError("NAVER_CALLBACK_URL_SCHEME not found in Info.plist")
+//        }
+//        
+//        NidOAuth.shared.initialize(
+//            appName: "JOOBJOOB".localized,
+//            clientId: naverCID,
+//            clientSecret: naverCsecretID,
+//            urlScheme: naverCBackURL
+//        )
         
-        KakaoSDK.initSDK(appKey: kakaoAppKey)
+        SNSManager.shared.setup()
+        
         return true
     }
     

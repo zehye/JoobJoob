@@ -115,6 +115,7 @@
                         <outlet property="kakaoLoginView" destination="nvv-Kb-ZTW" id="tH3-ia-g89"/>
                         <outlet property="loginDescLbl" destination="7Xf-sI-rn2" id="USQ-ph-PUy"/>
                         <outlet property="naverLoginView" destination="0mO-v4-UIJ" id="LDv-bK-zBh"/>
+                        <outlet property="stackView" destination="Mgn-JK-P8J" id="c34-s4-tit"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCP-fm-458" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

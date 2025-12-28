@@ -7,6 +7,7 @@
 
 import UIKit
 import KakaoSDKAuth
+import NidThirdPartyLogin
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -34,6 +35,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let url = URLContexts.first?.url {
             if (AuthApi.isKakaoTalkLoginUrl(url)) {
                 _ = AuthController.handleOpenUrl(url: url)
+            }
+            if (NidOAuth.shared.handleURL(url) == true) { // 네이버앱에서 전달된 Url인 경우
+                return
             }
         }
     }
