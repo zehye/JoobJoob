@@ -47,16 +47,20 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginViewDelegate {
-    func loginViewDidTap(_ view: LoginView, type: Platform) {
+    func loginViewDidTap(_ view: LoginView, type: Platform) async {
         switch type {
         case .kakao:
             print("카카오 로그인")
+            try? await SNSManager.shared.signIn(with: .kakao, on: self)
         case .naver:
             print("네이버 로그인")
+            try? await SNSManager.shared.signIn(with: .naver, on: self)
         case .apple:
             print("애플 로그인")
+            try? await SNSManager.shared.signIn(with: .apple, on: self)
         case .google:
             print("구글 로그인")
+            try? await SNSManager.shared.signIn(with: .google, on: self)
         }
     }
 }

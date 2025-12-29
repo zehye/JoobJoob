@@ -15,7 +15,7 @@ import UIKit
 //}
 
 protocol LoginViewDelegate: AnyObject {
-    func loginViewDidTap(_ view: LoginView, type: Platform)
+    func loginViewDidTap(_ view: LoginView, type: Platform) async
 }
 
 class LoginView: UIView {
@@ -92,7 +92,9 @@ class LoginView: UIView {
     }
     
     @IBAction func tapLogin(_ sender: UIButton) {
-        guard let type = platformstype else { return }
-        delegate?.loginViewDidTap(self, type: type)
+        Task { @MainActor in
+            guard let type = platformstype else { return }
+            await delegate?.loginViewDidTap(self, type: type)
+        }
     }
 }

@@ -24,8 +24,19 @@
 				<string>naverlogin</string>
 			</array>
 		</dict>
-		<dict/>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.561623173918-e6c7qejfhucv8q9r2revqqqb30vachu9</string>
+			</array>
+		</dict>
 	</array>
+	<key>GIDClientID</key>
+	<string>$(GIDClientID)</string>
+	<key>KAKAO_APP_KEY</key>
+	<string>$(KAKAO_APP_KEY)</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>naversearchapp</string>
@@ -35,16 +46,12 @@
 		<string>kakaoplus</string>
 		<string>kakaotalk</string>
 	</array>
-	<key>NAVER_CLIENT_ID</key>
-	<string>$(NAVER_CLIENT_ID)</string>
-	<key>APPLE_CLIENT_ID</key>
-	<string>$(APPLE_CLIENT_ID)</string>
-	<key>NAVER_CLIENT_SECRET</key>
-	<string>$(NAVER_CLIENT_SECRET)</string>
 	<key>NAVER_CALLBACK_URL_SCHEME</key>
 	<string>$(NAVER_CALLBACK_URL_SCHEME)</string>
-	<key>KAKAO_APP_KEY</key>
-	<string>$(KAKAO_APP_KEY)</string>
+	<key>NAVER_CLIENT_ID</key>
+	<string>$(NAVER_CLIENT_ID)</string>
+	<key>NAVER_CLIENT_SECRET</key>
+	<string>$(NAVER_CLIENT_SECRET)</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SpoqaHanSansNeo-Bold.ttf</string>
