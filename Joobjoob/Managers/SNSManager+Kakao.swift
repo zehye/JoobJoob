@@ -55,7 +55,6 @@ extension SNSManager.Kakao {
                     print(error.localizedDescription)
                     continuation.resume(throwing: error)
                 } else {
-#warning("TODO")
                     // 서버에 회원탈퇴 요청
                     // ..
                     
@@ -108,7 +107,6 @@ extension SNSManager.Kakao {
                     guard let userIdentifier = user.id else { return }
                     
                     let identityToken = token.idToken
-                    
                     let account = Account(platform: .kakao, id: String(userIdentifier))
                     
                     guard let data = try? JSONEncoder().encode(account),
@@ -116,7 +114,6 @@ extension SNSManager.Kakao {
                     
                     KeychainManager.write(key: "account", value: jsonString)
                     
-#warning("TODO")
                     // 서버에 identityToken 전달
                     // ..
                     

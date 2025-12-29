@@ -31,7 +31,6 @@ extension SNSManager.Apple {
     
     @discardableResult
     func disconnect() async throws -> Bool {
-        #warning("TODO")
         // 서버에 회원탈퇴 요청
         // ..
 
@@ -84,7 +83,7 @@ extension SNSManager.Apple: ASAuthorizationControllerDelegate {
               // let authorizationCode = credentials.authorizationCode,
               // let authorizationCodeString = String(data: authorizationCode, encoding: .utf8),
                 let identityToken = credentials.identityToken,
-              let identityTokenString = String(data: identityToken, encoding: .utf8) else {
+              let _ = String(data: identityToken, encoding: .utf8) else {
             return
         }
         
@@ -94,7 +93,6 @@ extension SNSManager.Apple: ASAuthorizationControllerDelegate {
         
         KeychainManager.write(key: "account", value: jsonString)
 
-        #warning("TODO")
         // 서버에 identityToken 전달
         // ..
         

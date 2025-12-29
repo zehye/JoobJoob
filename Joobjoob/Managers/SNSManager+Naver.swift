@@ -61,7 +61,6 @@ extension SNSManager.Naver {
             NidOAuth.shared.disconnect { result in
                 switch result {
                 case .success:
-#warning("TODO")
                     // 서버에 회원탈퇴 요청
                     // ..
                     
@@ -104,11 +103,8 @@ extension SNSManager.Naver {
                           let jsonString = String(data: data, encoding: .utf8) else { return }
                     
                     KeychainManager.write(key: "account", value: jsonString)
-                    
-#warning("TODO")
                     // 서버에 accessToken 전달
                     // ..
-                    
                     continuation.resume()
                 case .failure(let error):
                     print(error.localizedDescription)

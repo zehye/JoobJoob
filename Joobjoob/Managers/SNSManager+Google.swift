@@ -28,7 +28,7 @@ extension SNSManager.Google {
                 
                 guard let user = result?.user,
                       let userIdentifier = user.userID,
-                      let identityToken = user.idToken?.tokenString else {
+                      let _ = user.idToken?.tokenString else {
                     return
                 }
                 
@@ -39,7 +39,6 @@ extension SNSManager.Google {
                 
                 KeychainManager.write(key: "account", value: jsonString)
 
-                #warning("TODO")
                 // 서버에 identityToken 전달
                 // ..
                 
@@ -63,7 +62,6 @@ extension SNSManager.Google {
                 if let error {
                     continuation.resume(throwing: error)
                 } else {
-                    #warning("TODO")
                     // 서버에 회원탈퇴 요청
                     // ..
                     

@@ -32,7 +32,7 @@ extension UIColor {
 }
 
 // MARK: ColorTheme
-class ColorTheme: UIColor {
+class ColorTheme: UIColor, @unchecked Sendable {
 }
 
 // MARK: ColorThemeable
