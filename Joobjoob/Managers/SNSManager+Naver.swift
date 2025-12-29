@@ -10,8 +10,25 @@ import NidThirdPartyLogin
 
 extension SNSManager.Naver {
     func initalize() {
-        NidOAuth.shared.initialize()
-
+        NidOAuth.shared.setLoginBehavior(.appPreferredWithInAppBrowserFallback)
+        
+        guard let naverCID = Bundle.main.object(forInfoDictionaryKey: "NAVER_CLIENT_ID") as? String else {
+            fatalError("NAVER_CLIENT_ID not found in Info.plist")
+        }
+        guard let naverCsecretID = Bundle.main.object(forInfoDictionaryKey: "NAVER_CLIENT_SECRET") as? String else {
+            fatalError("NAVER_CLIENT_SECRET not found in Info.plist")
+        }
+        guard let naverCBackURL = Bundle.main.object(forInfoDictionaryKey: "NAVER_CALLBACK_URL_SCHEME") as? String else {
+            fatalError("NAVER_CALLBACK_URL_SCHEME not found in Info.plist")
+        }
+        
+        NidOAuth.shared.initialize(
+            appName: "JOOBJOOB".localized,
+            clientId: naverCID,
+            clientSecret: naverCsecretID,
+            urlScheme: naverCBackURL
+        )
+                
         // NidOAuth.shared.setLoginBehavior(.app)
         // NidOAuth.shared.setLoginBehavior(.inAppBrowser)
         // NidOAuth.shared.setLoginBehavior(.appPreferredWithInAppBrowserFallback) // Default
@@ -23,11 +40,11 @@ extension SNSManager.Naver {
     
     func login() async throws {
         let accessToken = try await requestLogin()
-              
+        
         guard !accessToken.isExpired else { // 접근 토큰이 유효하다면 바로 프로필 API 호출
             return
         }
-
+        
         try await getUserProfile(accessToken: accessToken)
     }
     
@@ -44,13 +61,13 @@ extension SNSManager.Naver {
             NidOAuth.shared.disconnect { result in
                 switch result {
                 case .success:
-                    #warning("TODO")
+#warning("TODO")
                     // 서버에 회원탈퇴 요청
                     // ..
-
+                    
                     // 디바이스에 저장된 정보 삭제
                     KeychainManager.delete(key: "account")
-
+                    
                     continuation.resume(returning: true)
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -80,15 +97,15 @@ extension SNSManager.Naver {
                 switch result {
                 case .success(let profile):
                     guard let userIdentifier = profile["id"] else { return }
-
+                    
                     let account = Account(platform: .naver, id: userIdentifier)
                     
                     guard let data = try? JSONEncoder().encode(account),
                           let jsonString = String(data: data, encoding: .utf8) else { return }
                     
                     KeychainManager.write(key: "account", value: jsonString)
-
-                    #warning("TODO")
+                    
+#warning("TODO")
                     // 서버에 accessToken 전달
                     // ..
                     
@@ -103,28 +120,28 @@ extension SNSManager.Naver {
     
     /* 이 앱에서는 사용하지 않음
      
-    /// 재인증
-    func reauthenticate() {
-        NidOAuth.shared.reauthenticate { result in
-            switch result {
-            case .success(let loginResult):
-                break
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
-    /// 권한 요청
-    func repromptPermissions() {
-        NidOAuth.shared.repromptPermissions { result in
-            switch result {
-            case .success(let loginResult):
-                break
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
-    */
+     /// 재인증
+     func reauthenticate() {
+     NidOAuth.shared.reauthenticate { result in
+     switch result {
+     case .success(let loginResult):
+     break
+     case .failure(let error):
+     print(error.localizedDescription)
+     }
+     }
+     }
+     
+     /// 권한 요청
+     func repromptPermissions() {
+     NidOAuth.shared.repromptPermissions { result in
+     switch result {
+     case .success(let loginResult):
+     break
+     case .failure(let error):
+     print(error.localizedDescription)
+     }
+     }
+     }
+     */
 }

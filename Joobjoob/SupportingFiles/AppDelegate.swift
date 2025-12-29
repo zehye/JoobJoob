@@ -23,27 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
 
-//        
-//        // naver
-//        NidOAuth.shared.setLoginBehavior(.appPreferredWithInAppBrowserFallback)
-//        
-//        guard let naverCID = Bundle.main.object(forInfoDictionaryKey: "NAVER_CLIENT_ID") as? String else {
-//            fatalError("NAVER_CLIENT_ID not found in Info.plist")
-//        }
-//        guard let naverCsecretID = Bundle.main.object(forInfoDictionaryKey: "NAVER_CLIENT_SECRET") as? String else {
-//            fatalError("NAVER_CLIENT_SECRET not found in Info.plist")
-//        }
-//        guard let naverCBackURL = Bundle.main.object(forInfoDictionaryKey: "NAVER_CALLBACK_URL_SCHEME") as? String else {
-//            fatalError("NAVER_CALLBACK_URL_SCHEME not found in Info.plist")
-//        }
-//        
-//        NidOAuth.shared.initialize(
-//            appName: "JOOBJOOB".localized,
-//            clientId: naverCID,
-//            clientSecret: naverCsecretID,
-//            urlScheme: naverCBackURL
-//        )
-        
         SNSManager.shared.setup()
         
         return true
