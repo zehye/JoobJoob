@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
     }
     
     func initUI() {
-        self.loginDescLbl.font = UIFont.spoqaHanSansNeo(type: .medium, size: CGFloat(12))
+        self.loginDescLbl.font = UIFont.spoqaHanSansNeo(type: .bold, size: CGFloat(12))
         self.loginDescLbl.textColor = ColorTheme(background: .grey)
         self.loginDescLbl.text = "LOGIN_SNS".localized
     }
