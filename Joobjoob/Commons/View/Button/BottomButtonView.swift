@@ -48,8 +48,10 @@ class BottomButtonView: UIView {
         
         self.button.layer.cornerRadius = 4
         self.button.titleLabel?.font = UIFont.spoqaHanSansNeo(type: .medium, size: CGFloat(14))
+        self.button.titleLabel?.tintColor = ColorTheme(background: .white)
+        self.button.backgroundColor = ColorTheme(background: .background)
         
-        self.containerView.backgroundColor = ColorTheme(background: .background)
+        self.containerView.backgroundColor = ColorTheme(background: .white)
     }
 
     // 버튼 타이틀과 상태 업데이트 시키는 메소드

@@ -56,15 +56,17 @@ class NavigationView: UIView {
         self.titleLbl.font = UIFont.spoqaHanSansNeo(type: .bold, size: CGFloat(22))
         self.titleLbl.textColor = ColorTheme(foreground: .black)
         
+        self.leftBtn.isHidden = true
         self.leftBtn.setTitle("", for: .normal)
-        self.leftBtn.setImage(UIImage(named: "icNavigationBack")?.withRenderingMode(.alwaysOriginal), for: .normal)
+//        self.leftBtn.setImage(UIImage(named: "icNavigationBack")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        self.leftBtn.tintColor = ColorTheme(background: .black)
         
         self.rightBtn.isHidden = true
         self.rightBtn.setTitle("", for: .normal)
-        self.rightBtn.setImage(UIImage(named: "icSearch")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        self.rightBtn.setImage(UIImage(named: "icSetting")?.withRenderingMode(.alwaysOriginal), for: .normal)
         
         self.rightSecondBtn.isHidden = true
         self.rightSecondBtn.setTitle("", for: .normal)
-        self.rightSecondBtn.setImage(UIImage(named: "icSetting")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        self.rightSecondBtn.setImage(UIImage(named: "icSearch")?.withRenderingMode(.alwaysOriginal), for: .normal)
     }
 }
