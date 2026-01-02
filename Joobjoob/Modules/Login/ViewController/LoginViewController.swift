@@ -23,6 +23,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var appleLoginView: LoginView!
     @IBOutlet weak var googleLoginView: LoginView!
     
+    
+    @IBAction func onboardingBtn(_ sender: Any) {
+        let vc = OnboardingViewController.instance()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

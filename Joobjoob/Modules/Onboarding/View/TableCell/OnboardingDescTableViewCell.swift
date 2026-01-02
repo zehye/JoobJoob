@@ -9,15 +9,14 @@ import UIKit
 
 class OnboardingDescTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var containerView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        initUI()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func initUI() {
     }
-
 }
