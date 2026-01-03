@@ -40,7 +40,7 @@ extension ColorTheme.LightTheme {
         case .black: return UIColor(hexString: "000000")
         case .kakalYellow: return UIColor(hexString: "FEE500")
         case .naverGreen: return UIColor(hex: "03A94D")
-        case .grey: return UIColor(hexString: "6C7278")
+        case .grey: return UIColor(hexString: "D9D9D9")
         }
     }
 }
