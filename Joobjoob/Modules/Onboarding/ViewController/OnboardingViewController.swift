@@ -45,24 +45,89 @@ class OnboardingViewController: UIViewController {
         self.descTitleLbl.attributedText = attrString
         
         self.bottomView.button.setTitle("GO_JOOBJOOB".localized, for: .normal)
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.separatorStyle = .none
+        
+        self.tableView.register(UINib(nibName: "OnboardingTitleTableViewCell", bundle: nil), forCellReuseIdentifier: "OnboardingTitleCell")
+        self.tableView.register(UINib(nibName: "OnboardingProfileImageTableViewCell", bundle: nil), forCellReuseIdentifier: "OnboardingProfileImageCell")
+        self.tableView.register(UINib(nibName: "OnboardingProfileNicknameSettingTableViewCell", bundle: nil), forCellReuseIdentifier: "OnboardingProfileNicknameCell")
+        self.tableView.register(UINib(nibName: "OnboardingProfileRegionSettingTableViewCell", bundle: nil), forCellReuseIdentifier: "OnboardingProfileRegionCell")
+        self.tableView.register(UINib(nibName: "OnboardingProfileCategorySettingTableViewCell", bundle: nil), forCellReuseIdentifier: "OnboardingProfileCategoryCell")
     }
 }
 
 extension OnboardingViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section == 0 {
+            return 3
+        } else {
+            return 2
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "OnboardingDescCell") as? OnboardingDescTableViewCell else {
-            fatalError()
+        let section = indexPath.section
+        let row = indexPath.row
+        
+        if section == 0 {
+            if row == 0 {
+                guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "OnboardingTitleCell") as? OnboardingTitleTableViewCell else {
+                    fatalError()
+                }
+                cell.titleLbl.text = "PROFILE_SETTING".localized
+                cell.descLbl.isHidden = true
+                
+                return cell
+            } else if row == 1 {
+                guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "OnboardingProfileImageCell") as? OnboardingProfileImageTableViewCell else {
+                    fatalError()
+                }
+                
+                return cell
+            } else {
+                guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "OnboardingProfileNicknameCell") as? OnboardingProfileNicknameSettingTableViewCell else {
+                    fatalError()
+                }
+                
+                return cell
+            }
+        } else if section == 1 {
+            if row == 0 {
+                guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "OnboardingTitleCell") as? OnboardingTitleTableViewCell else {
+                    fatalError()
+                }
+                cell.titleLbl.text = "REGION_SETTING".localized
+                cell.descLbl.text = "SELECT_REGION".localized
+                
+                return cell
+            } else {
+                guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "OnboardingProfileRegionCell") as? OnboardingProfileRegionSettingTableViewCell else {
+                    fatalError()
+                }
+                return cell
+            }
+        } else {
+            if row == 0 {
+                guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "OnboardingTitleCell") as? OnboardingTitleTableViewCell else {
+                    fatalError()
+                }
+                cell.titleLbl.text = "FAVORITE_ACTION".localized
+                cell.descLbl.text = "FAVORITE_CONDITION".localized
+                
+                return cell
+            }
+            else {
+                guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "OnboardingProfileCategoryCell") as? OnboardingProfileCategorySettingTableViewCell else {
+                    fatalError()
+                }
+                return cell
+            }
         }
-        return cell
     }
     
     

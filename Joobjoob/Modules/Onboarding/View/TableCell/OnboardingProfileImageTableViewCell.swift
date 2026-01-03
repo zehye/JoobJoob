@@ -9,15 +9,21 @@ import UIKit
 
 class OnboardingProfileImageTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var cameraBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        initUI()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func initUI() {
+        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.height / 2
+        
+//        self.cameraBtn. = UIImage(named: "icCamera")?.withRenderingMode(.alwaysOriginal)
+        self.cameraBtn.layer.cornerRadius = self.cameraBtn.frame.height / 2
     }
     
 }

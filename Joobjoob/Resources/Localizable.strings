@@ -18,3 +18,21 @@
 // 온보딩
 "ONBOARDING_DESC_TITLE" = "내 취향에 맞는 모임을 찾을 수 있도록\n프로필을 설정해 주세요.";
 "GO_JOOBJOOB" = "줍줍하러 가기";
+"PROFILE_SETTING" = "프로필 설정";
+"ENTER_NICKNAME" = "닉네임을 입력해 주세요.";
+"NICKNAME_CONDITION" = "닉네임은 2~12자의 한글, 영문, 숫자만 사용할 수 있어요.";
+"REGION_SETTING" = "지역 설정";
+"SELECT_REGION" = "지역을 선택해 주세요.";
+"DUPLICATE_CONFIRMATION" = "중복확인";
+"ADDRESS_1" = "시/도";
+"ADDRESS_2" = "시/군/구";
+"SELECT" = "선택";
+"FAVORITE_ACTION" = "관심 있는 활동";
+"FAVORITE_CONDITION" = "관심 카테고리는 최소 1개, 최대 3개까지 선택할 수 있어요";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+

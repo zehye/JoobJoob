@@ -9,15 +9,22 @@ import UIKit
 
 class OnboardingTitleTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var descLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        initUI()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func initUI() {
+        self.titleLbl.textColor = ColorTheme(foreground: .black)
+        self.titleLbl.font = UIFont.spoqaHanSansNeo(type: .bold, size: CGFloat(16))
+        
+        self.descLbl.textColor = ColorTheme(foreground: .black)
+        self.descLbl.font = UIFont.spoqaHanSansNeo(type: .medium, size: CGFloat(10))
     }
     
 }
